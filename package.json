@@ -1,0 +1,20 @@
+{
+  "name": "an-introduction-to-node-and-express",
+  "version": "1.0.0",
+  "description": "an-introduction-to-node-and-express",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "postinstall": "cp db.example.json db.json"
+  },
+  "author": {
+    "name": "Marco Montalbano",
+    "url": "https://marcomontalbano.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3",
+    "lowdb": "^1.0.0"
+  }
+}
