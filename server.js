@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var PORT = process.env.PORT || 5000;
 
 var low = require('lowdb');
 var FileSync = require('lowdb/adapters/FileSync');
@@ -49,6 +50,6 @@ app.route('/articles/:id(\\d+)')
         )
     })
 
-app.listen(3000, function () {
-    console.log('Example app listening on port 3000!');
+app.listen(PORT, function () {
+    console.log('Example app listening on port ' + PORT + '!');
 });
