@@ -8,6 +8,9 @@ var FileSync = require('lowdb/adapters/FileSync');
 var adapter = new FileSync('db.json');
 var db = low(adapter);
 
+// http://expressjs.com/en/starter/static-files.html
+app.use(express.static('public'));
+
 // http://expressjs.com/en/api.html#express.json
 app.use(express.json());
 
@@ -23,13 +26,13 @@ app.get('/hello-world', function (req, res) {
     res.send('Hello World!');
 })
 
-app.get('/articles', function (req, res) {
+app.get('/api/v1/articles', function (req, res) {
     res.send(
         db.get('articles').value()
     )
 })
 
-app.route('/articles/:id(\\d+)')
+app.route('/api/v1/articles/:id(\\d+)')
     .get(function (req, res) {
         res.send(
             db.get('articles')
